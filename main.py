@@ -4,14 +4,15 @@ import time
 import random
 
 
-camera_id = str(uuid.uuid4())
-timestamp = int(time.time())
-signal = []
+def construct_message():
+    camera_id = str(uuid.uuid4())
+    timestamp = int(time.time())
+    signal = []
 
-for i in range(4):
-    signal.append(random.randint(0, 3))
+    for i in range(4):
+        signal.append(random.randint(0, 3))
 
-message = json.dumps({'cameraId': camera_id, 'timestamp': timestamp, 'signal': signal}, separators=(',', ':'))
+    return json.dumps({'cameraId': camera_id, 'timestamp': timestamp, 'signal': signal}, separators=(',', ':'))
 
 
 def send(msg):
@@ -20,4 +21,5 @@ def send(msg):
 
 
 if __name__ == '__main__':
+    message = construct_message()
     send(message)
