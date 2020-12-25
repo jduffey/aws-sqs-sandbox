@@ -1,9 +1,15 @@
 import json
+import uuid
+import time
+import random
 
 
-camera_id = "2aa1fd44-4311-4e4c-a817-ea000449e23b"
-timestamp = "1608857171"
-signal = "[0,1,2,3]"
+camera_id = str(uuid.uuid4())
+timestamp = int(time.time())
+signal = []
+
+for i in range(4):
+    signal.append(random.randint(0, 3))
 
 message = json.dumps({'cameraId': camera_id, 'timestamp': timestamp, 'signal': signal}, separators=(',', ':'))
 
