@@ -1,16 +1,14 @@
-# This is a sample Python script.
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+message =\
+"{\"cameraId\": \"2aa1fd44-4311-4e4c-a817-ea000449e23b\", \
+\"timestamp\": \"1608857171\", \
+\"signal\": \"[0,1,2,3]\"}"
 
 
-# Press the green button in the gutter to run the script.
+def send(message):
+    print("Sending message...")
+    print(f'Message: {message}')
+
+
 if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+    send(message)
